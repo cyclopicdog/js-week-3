@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lighbulb</title>
+    <style>
+      .light__off {
+        width: 300px;
+        height: 300px;
+        background-image: url("off.png");
+        background-size: contain;
+        background-position: center;
+      }
+
+      .light__on {
+        width: 300px;
+        height: 300px;
+        background-image: url("on.png");
+        background-size: contain;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="light__off" id="bulb"></div>
+    <button class="light__switch" onclick="change()">
+      do you want to turn me on?
+    </button>
+  </body>
+  <script src="script.js" lang="UTF-8"></script>
+</html>

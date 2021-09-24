@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lights {
+  width: 100px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: black;
+  padding: 5px;
+}
+
+.lights__dont-walk-light {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-image: url('lights/stop-on.svg');
+  background-size: contain;
+  background-color: white;
+}
+
+.lights__dont-walk-light--off {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-image: url('lights/stop-off.svg');
+    background-size: contain;
+  background-color: white;
+}
+
+.lights__walk-light {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-image: url('lights/walk-off.svg');
+  background-size: contain;
+  background-color: white;
+}
+
+.lights__walk-light--on {
+    width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-image: url('lights/walk-on.svg');
+    background-size: contain;
+  background-color: white;
+}
+
+.lights__button {
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  background-color: violet;
+
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Color me good!</title>
+  </head>
+  <body>
+    <main class="rgb__wrapper" id="wrapper">
+      <h1>Pick a new a disgusting colour...</h1>
+      <input type="number" id="first" class="rgb__number" maxlength="3" />
+      <input type="number" id="second" class="rgb__number" maxlength="3" />
+      <input type="number" id="third" class="rgb__number" maxlength="3" />
+      <button class="rgb__button" onclick="changeColor()">
+        Click on me when you're done
+      </button>
+      <p>Current background <span id="rgb">rgb(0, 0, 0)</span></p>
+    </main>
+  </body>
+  <script src="index.js" lang="UTF-8"></script>
+</html>

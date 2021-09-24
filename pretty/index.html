@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Pretty-checkbox</title>
+</head>
+
+<body>
+  <form name="survey">
+    <div class="form-group">
+
+      <label for="">Are you pretty?</label>
+      <div class="pretty-checkbox" id="pretty-checkbox">
+        <input type="checkbox" value="1" name="pretty">
+
+        <div class="pretty-checkbox__widget">
+          <div class="pretty-checkbox__bullet"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="">Are you happy?</label>
+      <div class="pretty-checkbox" id="happy-checkbox">
+        <input type="checkbox" value="1" name="happy">
+
+        <div class="pretty-checkbox__widget">
+          <div class="pretty-checkbox__bullet"></div>
+        </div>
+      </div>
+
+    </div>
+    <input type="submit" value="submit">
+  </form>
+
+
+  <script src="script.js"></script>
+  <script>
+    pretty_checkbox('#pretty-checkbox');
+    pretty_checkbox('#happy-checkbox');
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>salary calc</title>
+  </head>
+  <style></style>
+
+  <body>
+    <label for="salary">Tell me your hourly pay:</label>
+    <input type="number" name="salary" id="salary" />
+    <label for="hours">Tell me how many hours a day you work:</label>
+    <input type="number" name="hours" id="hours" />
+    <label for="days">Tell me how many days you worked:</label>
+    <input type="number" name="days" id="days" />
+    <button onclick="calculate()">How much you gonna earn?</button>
+
+    <p class="pay__monthly" id="monthly"></p>
+  </body>
+  <script>
+    const calculate = () => {
+      let outcome = document.querySelector("#monthly");
+      let salary = Number(document.querySelector("#salary").value);
+      let hours = Number(document.querySelector("#hours").value);
+      let days = Number(document.querySelector("#days").value);
+
+      outcome.textContent =
+        "You're gonna make $" + String(salary * hours * days) + " this month!";
+    };
+  </script>
+</html>

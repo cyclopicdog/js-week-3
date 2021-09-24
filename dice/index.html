@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice</title>
+  </head>
+  <style>
+    .dice__container {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dice__instructions {
+      text-align: center;
+    }
+
+    .dice1-1,
+    .dice2-1 {
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-image: url("side1.png");
+      background-repeat: no-repeat;
+    }
+
+    .dice1-2,
+    .dice2-2 {
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-image: url("side2.png");
+      background-repeat: no-repeat;
+    }
+
+    .dice1-3,
+    .dice2-3 {
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-image: url("side3.png");
+      background-repeat: no-repeat;
+    }
+    .dice1-4,
+    .dice2-4 {
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-image: url("side4.png");
+      background-repeat: no-repeat;
+    }
+
+    .dice1-5,
+    .dice2-5 {
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-image: url("side5.png");
+      background-repeat: no-repeat;
+    }
+
+    .dice1-6,
+    .dice2-6 {
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-image: url("side6.png");
+      background-repeat: no-repeat;
+    }
+  </style>
+
+  <body>
+    <section class="dice__container">
+      <p class="dice__instructions">
+        Place a bet and roll the dice - if you guess right you multiply your bet
+        by the number on the dice!
+      </p>
+
+      <div class="dice__money">
+        $<span class="dice__money-pot" id="money-pot">500</span>
+      </div>
+
+      <label for="bet">What you gonna bet?</label>
+      <input type="number" name="bet" id="bet" />
+
+      <label for="guess"
+        >What do you think I'm going to be compared to seven?</label
+      >
+      <select name="guess" id="guess">
+        <option value="less">lower than 7</option>
+        <option value="same">exactly 7</option>
+        <option value="more">higher than 7</option>
+      </select>
+
+      <button class="dice__button" id="button" onclick="play()">
+        Time to gamble!
+      </button>
+      <div class="dice1-1" id="dice1"></div>
+      <div class="dice2-1" id="dice2"></div>
+
+      <div class="dice__result" id="result"></div>
+    </section>
+  </body>
+
+  <script src="script.js" lang="UTF-8"></script>
+</html>
