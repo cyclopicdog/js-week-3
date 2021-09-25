@@ -11,6 +11,28 @@
 <body>
 
   <script src="srcipt.js" lang="UTF-8"></script>
+  <script>
+
+
+    let peak = Infinity;
+    let valley = -Infinity;
+
+    for (let i = 1; i < numbers.length - 1; i++) {
+      if (numbers[i] > numbers[i - 1] && numbers[i] > numbers[i + 1]) {
+        if (numbers[i] < peak) {
+          peak = numbers[i];
+        }
+      } else if (numbers[i] < numbers[i - 1] && numbers[i] < numbers[i + 1]) {
+        if (numbers[i] > valley) {
+          valley = numbers[i];
+        }
+      }
+    }
+
+    console.log(peak);
+    console.log(valley);
+
+  </script>
 </body>
 
 </html>

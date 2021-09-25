@@ -81,7 +81,7 @@
 // console.log(sumPos)
 
 
-// INTERMEDIATE STUFF!!
+///////////////////////////// INTERMEDIATE STUFF!!
 
 // for (let i = 0; i < numbers.length; i++) {
 //   let nextNum = numbers[i + 1];
@@ -127,6 +127,7 @@
 
 // console.log(variance);
 
+
 // let biggest = 0;
 
 // for (let i = 1; i < numbers.length; i++) {
@@ -165,8 +166,9 @@
 
 // console.log(newNumbers);
 
+//////////////////////////////////////////////////////////////////////////
 
-const numbers = [18, 8, 9, 10, -24, 28, -17, 14, 5, 4, 3, 2, 1, 0, -10, 24, 12, 8, 9, 10, 11, -31, 19, 32, -14, -10, 13, 8, -15, -2, 17];
+// const numbers = [18, 8, 9, 10, -24, 28, -17, 14, 5, 4, 3, 2, 1, 0, -10, 24, 12, 8, 9, 10, 11, -31, 19, 32, -14, -10, 13, 8, -15, -2, 17];
 
 // let longArray = [];
 // let tempArray = [];
@@ -207,72 +209,169 @@ const numbers = [18, 8, 9, 10, -24, 28, -17, 14, 5, 4, 3, 2, 1, 0, -10, 24, 12, 
 // console.log(longArray.length);
 
 
-let consNum = [];
-let tempConsNum = [];
+// let consNum = [];
+// let tempConsNum = [];
+
+// for (let i = 0; i < numbers.length; i++) {
+//   // set number values
+
+//   let lastNum;
+//   if (lastNum === null) {
+//     numbers[i] = lastNum;
+//   } else {
+//     lastNum = numbers[i - 1];
+//   }
+
+//   let nextNum = numbers[i + 1]
+
+//   // is the next number consecutive?
+//   if (nextNum - numbers[i] === 1) {
+//     tempConsNum.push(numbers[i]);
+//   }
+//   // is it the end of a sequence?
+//   else if (nextNum - numbers[i] !== 1 && numbers[i] - lastNum === 1) {
+//     tempConsNum.push(numbers[i]);
+//     // is the tempArray longer than the current champ?
+//     if (tempConsNum.length > consNum.length) {
+//       consNum = tempConsNum;
+
+//       tempConsNum = [];
+//     } else {
+//       tempConsNum = [];
+//     }
+//   } else {
+//     tempConsNum = [];
+//   }
+// }
+
+// for (let i = 0; i < numbers.length; i++) {
+//   // set number values
+//   let lastNum;
+//   if (lastNum === null) {
+//     numbers[i] = lastNum;
+//   } else {
+//     lastNum = numbers[i - 1];
+//   }
+
+//   let nextNum = numbers[i + 1]
+//   // is it the first number?
+//   if (i === 0) {
+//     tempConsNum.push(numbers[i]);
+//   }
+//   // is the next number consecutive going down?
+//   else if (lastNum - numbers[i] === 1) {
+//     tempConsNum.push(numbers[i]);
+//   }
+//   // is it the end of a sequence?
+//   else if (lastNum - numbers[i] !== 1) {
+//     // is the tempArray longer than the current champ?
+//     if (tempConsNum.length > consNum.length) {
+//       consNum = tempConsNum;
+//       tempConsNum = [];
+//     } else {
+//       tempConsNum = [];
+//     }
+//   } else {
+//     tempConsNum = [];
+//   }
+// }
+
+// console.log('conSum = ' + consNum);
+
+// original list
+
+const numbers = [12, 11, 18, 8, -24, 28, -17, 14, -10, 24, 12, -31, 19, 32, -14, -10, 13, 8, -15, -2, 17]
+
+// put them in order and find the second
+
+// let inOrder = numbers.sort((a, b) => b - a);
+
+// console.log(inOrder);
+// console.log(inOrder[2]);
+
+
+///////////////////////////////////////////
+
+// make a peak value
+let lowPeak;
+
+// find the peaks! Compare to previous and next number - if higher than both its a peak
 
 for (let i = 0; i < numbers.length; i++) {
   // set number values
+  let preNum;
+  let nextNum;
 
-  let lastNum;
-  if (lastNum === null) {
-    numbers[i] = lastNum;
+
+  // set number values for the end of the rows
+  if (!i) {
+    preNum = (numbers[i] - 1);
+  }
+  else {
+    preNum = numbers[i - 1]; // can't set this value until after the if!
+  }
+
+  if (i === numbers.length - 1) {
+    nextNum = numbers[i] - 1;
   } else {
-    lastNum = numbers[i - 1];
+    nextNum = numbers[i + 1];
   }
 
-  let nextNum = numbers[i + 1]
+  // if the peak doesn't exist add the first value, else compare
 
-  // is the next number consecutive?
-  if (nextNum - numbers[i] === 1) {
-    tempConsNum.push(numbers[i]);
-  }
-  // is it the end of a sequence?
-  else if (nextNum - numbers[i] !== 1 && numbers[i] - lastNum === 1) {
-    tempConsNum.push(numbers[i]);
-    // is the tempArray longer than the current champ?
-    if (tempConsNum.length > consNum.length) {
-      consNum = tempConsNum;
+  if (numbers[i] > preNum && numbers[i] > nextNum) {
+    if (!lowPeak) {
+      lowPeak = numbers[i];
 
-      tempConsNum = [];
-    } else {
-      tempConsNum = [];
+    } else if (numbers[i] < lowPeak) {
+      lowPeak = numbers[i];
     }
-  } else {
-    tempConsNum = [];
   }
+
 }
+
+console.log('Lowest peak is: ' + lowPeak)
+
+
+
+// make a valley value
+let highValley;
+
+// find the peaks! Compare to previous and next number - if higher than both its a peak
 
 for (let i = 0; i < numbers.length; i++) {
+  console.log(highValley);
+
   // set number values
-  let lastNum;
-  if (lastNum === null) {
-    numbers[i] = lastNum;
-  } else {
-    lastNum = numbers[i - 1];
+  let preNum;
+  let nextNum;
+
+
+  // set number values for the end of the rows
+  if (!i) {
+    preNum = (numbers[i] + 1); // makes sure first number can be a valley
+  }
+  else {
+    preNum = numbers[i - 1]; // can't set this value until after the if!
   }
 
-  let nextNum = numbers[i + 1]
-  // is it the first number?
-  if (i === 0) {
-    tempConsNum.push(numbers[i]);
-  }
-  // is the next number consecutive going down?
-  else if (lastNum - numbers[i] === 1) {
-    tempConsNum.push(numbers[i]);
-  }
-  // is it the end of a sequence?
-  else if (lastNum - numbers[i] !== 1) {
-    console.log(tempConsNum);
-    // is the tempArray longer than the current champ?
-    if (tempConsNum.length > consNum.length) {
-      consNum = tempConsNum;
-      tempConsNum = [];
-    } else {
-      tempConsNum = [];
-    }
+  if (i === numbers.length - 1) {
+    nextNum = numbers[i] + 1; // makes sure last number can be a valley
   } else {
-    tempConsNum = [];
+    nextNum = numbers[i + 1];
   }
+
+  // if the peak doesn't exist add the first value, else compare
+
+  if (numbers[i] < preNum && numbers[i] < nextNum) {
+    if (!highValley) {
+      highValley = numbers[i];
+
+    } else if (numbers[i] > highValley) {
+      highValley = numbers[i];
+    }
+  }
+
 }
 
-console.log('conSum = ' + consNum);
+console.log('Highest valley is: ' + highValley)
