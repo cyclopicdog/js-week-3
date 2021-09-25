@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
   width: 500px;
   height: 150px;
   display: flex;
-align-items: center;
+  align-items: center;
   background-color: white;
 }
 
@@ -28,8 +29,23 @@ align-items: center;
   background-repeat: no-repeat;
 }
 
+.locked__padlock--clicked {
+  height: 100px;
+  width: 100px;
+  background-image: url('padlock.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
 .locked__text {
   width: 400px;
   height: 100px;
   display: none;
+}
+
+.locked__text--visible {
+  width: 400px;
+  height: 100px;
+  display: block;
 }
