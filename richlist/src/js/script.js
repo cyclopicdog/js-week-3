@@ -12,7 +12,7 @@ const getNames = (list) => {
 
 getNames(richFolk);
 
-// radio buttons
+// checkboxes buttons ticked?
 
 let showNet = false;
 let showCountry = false;
@@ -20,6 +20,7 @@ let showSource = false;
 let showAge = false;
 let showStatus = false;
 
+// checkboxes in html
 
 let netW = document.querySelector('#netW');
 let country = document.querySelector('#country');
@@ -27,8 +28,17 @@ let source = document.querySelector('#source');
 let age = document.querySelector('#age');
 let status = document.querySelector('#status');
 
+// checkbox ticked toggle - not working - how do I pass the right value into it?
 
-
+// const keyToggle = (checkbox) => {
+//   if (checkbox === false) {
+//     checkbox = true;
+//     startRichSearch();
+//   } else {
+//     checkbox = false;
+//     startRichSearch();
+//   }
+// }
 
 netW.addEventListener('click', () => {
   if (!showNet) {
