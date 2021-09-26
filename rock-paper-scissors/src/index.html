@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <h1 class="rps__heading">Rock Paper Scissors</h1>
+        <h2 class="rps__sub-heading">The Ultimate Game of All Games</h2>
+        <p class="rps__rules">
+            Rules: Rock beats Scissors, Scissors beat Paper, Paper beats Rock.
+        </p>
+        <div class="rps-scorecard">
+            <h3 class="rps-scorecard__heading">Scoreboard</h3>
+            <div class="rps-scorecard__score-box">
+                <p class="rps-scorecard__points" id="youScore">0</p>
+                <p class="rps-scorecard__score-label">You</p>
+            </div>
+            <div class="rps-scorecard__score-box">
+                <p class="rps-scorecard__points" id="botScore">0</p>
+                <p class="rps-scorecard__score-label">Bot</p>
+            </div>
+        </div>
+
+        <div class="rps-game">
+            <h2 class="rps-game__heading">Play the Game</h2>
+            <button class="rps-game__button" id="rock">ROCK</button>
+            <button class="rps-game__button" id="paper">PAPER</button>
+            <button class="rps-game__button" id="Scissors">SCISSORS</button>
+
+            <p class="rps-game__played" id="youPlayed">You played:</p>
+            <p class="rps-game__played" id="botPlayed">Bot played:</p>
+            <p class="rps-game__played" id="result">Result of this round:</p>
+        </div>
+        <script src="/js/script.js" lang="UTF-8"></script>
+    </body>
+</html>
